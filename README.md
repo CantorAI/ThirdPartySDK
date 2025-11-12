@@ -10,3 +10,15 @@ cd webrtc\lib\windows\debug_x64
 
 ```
 it will generate webrtc.lib under the same folder
+
+
+# Patch in head file
+
+ThirdPartySDK\webrtc\include.linux\pc\session_description.h
+ around line 462
+
+   //bool operator==(const ContentGroup& o) const = default;
+  bool operator==(const ContentGroup& o) const {
+      return semantics_ == o.semantics_ && content_names_ == o.content_names_;
+  }
+  if not patch will break in linux build
