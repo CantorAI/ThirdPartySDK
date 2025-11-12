@@ -62,3 +62,8 @@ dir C:\webrtc_build\*.lib /s
 ```bash
 find . -type f \( -name "*.a" -o -name "*.so" \)
 ```
+
+### for Linux we need to use gcc build libwebrtc,
+  so we change to use script webrtc_build.sh
+  and also make diffrent include with webrtc_build_includes.bat 
+  (in windows to make the include.linux from webrtc/src)
